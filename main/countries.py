@@ -8,7 +8,6 @@ Denmark
 Estonia
 Finland
 France
-Germany
 Greece
 Hungary
 Italy
