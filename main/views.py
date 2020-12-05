@@ -18,6 +18,7 @@ def get_started(request):
 def country(request, country):
     dictionary = {
        'country': Country.objects.get(name=country),
+       'countries': Country.objects.all()
     } 
     return render(request, 'country.html', dictionary)
 
