@@ -78,7 +78,7 @@ def create_db(request):
     quarantine = quarantine['class']
     quarantine = quarantine[0]
     quarantine = quarantine[7:]
-    cntry = Country.objects.get(name='Czechia', open_for_f=foreigners_status, open_for_t=tourism_status, quarantine=quarantine, advices=advices)
+    cntry = Country(name='Czechia', open_for_f=foreigners_status, open_for_t=tourism_status, quarantine=quarantine, advices=advices)
     cntry.save()
     
     return HttpResponse('DataBase Create')
@@ -95,8 +95,9 @@ def update_db(request):
         quarantine = bs.find('span', {'class': 'type-quarantine'})
         advices = bs.find('td', {'class': 'the_content'})
         print('///') 
-        print(advices)
         advices = advices.text
+        if advices[-9:] == 'Read more':
+            advices = advices[:-9]
         foreigners_status = foreigners_status['class']
         foreigners_status = foreigners_status[0]
         foreigners_status =  foreigners_status[7:]
@@ -115,6 +116,8 @@ def update_db(request):
     quarantine = bs.find('span', {'class': 'type-quarantine'})
     advices = bs.find('td', {'class': 'the_content'})
     advices = advices.text
+    if advices[-9:] == 'Read more':
+        advices = advices[:-9]
     foreigners_status = foreigners_status['class']
     foreigners_status = foreigners_status[0]
     foreigners_status =  foreigners_status[7:]
@@ -133,6 +136,8 @@ def update_db(request):
     quarantine = bs.find('span', {'class': 'type-quarantine'})
     advices = bs.find('td', {'class': 'the_content'})
     advices = advices.text
+    if advices[-9:] == 'Read more':
+        advices = advices[:-9]
     foreigners_status = foreigners_status['class']
     foreigners_status = foreigners_status[0]
     foreigners_status =  foreigners_status[7:]
