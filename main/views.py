@@ -15,8 +15,11 @@ def country_list(request):
 def get_started(request):
     return render(request, 'form.html', {'countries': Country.objects.all()})
 
-def country(request):
-    return render(request, 'country.html', {'countries': Country.objects.all()})
+def country(request, country):
+    dictionary = {
+       'country': Country.objects.get(name=country),
+    } 
+    return render(request, 'country.html', dictionary)
 
 @login_required
 def create_db(request):
