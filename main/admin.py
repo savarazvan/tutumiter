@@ -12,6 +12,7 @@ class CountryAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['name']}),
         (None, {'fields': ['tags']}),
+        (None, {'fields': ['advices']}),
         (None, {'fields': ['open_for_f']}),
         (None, {'fields': ['open_for_t']}),
         (None,  {'fields': ['quarantine']})
