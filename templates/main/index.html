@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="zxx">
+
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+
+<body class="gradient-animation">
+    <div class="grid-container">
+        <div class="item1">
+            <h1 style=" font-family: foxCat;">Where to?</h1>
+            <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')">Show all</button>
+                <button class="btn" onclick="filterSelection('beach')">Beach</button>
+                <button class="btn" onclick="filterSelection('mountain')">Mountain</button>
+                <button class="btn" onclick="filterSelection('canyon')">Canyon</button>
+                <button class="btn" onclick="filterSelection('forest')">Forest</button>
+                <button class="btn" onclick="filterSelection('waterfall')">Waterfall</button>
+                <button class="btn" onclick="filterSelection('cave')">Cave</button>
+                <button class="btn" onclick="filterSelection('strait')">Strait</button>
+                <button class="btn" onclick="filterSelection('desert')">Desert</button>
+              </div>
+        </div>
+    </div>
+    <div class="grid-container" style="margin-left: 20%; margin-right: 20%; background-color: white;">
+        {% for country in countries %}
+            {% with 'filterDiv '|add:country.tags as filter%}
+            <div class = "{{ filter }}">
+            {% endwith %}
+                <a href="google.com">
+                    {% with 'main/images/'|add:country.name|add:'.png' as link %}
+                <img class="flag" src="{% static link %}" width="150px" height="100px"></a>
+                    {% endwith %}
+                <p style="margin-top: 1px; font-family: foxCat;"><b>{{ country.name }}</b></p>
+            </div>
+        {% endfor %}
+    </div> 
+</body>
+
+<script src="{% static 'main/js/cod.js' %}"></script>
+</html>

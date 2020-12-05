@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+</head>
+
+<body style="background-image: url({% static 'main/images/mauitlaform.jpg'%}); background-size: cover;">
+    <div class="grid-container">
+        <div class="item1">
+            <h1 style=" font-family: foxCat;">De unde esti bos</h1>
+            <div class="scroll" style="width: 300px; margin-left: 40%;" >
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <div id="myDropdown" class="dropdown-content">
+                {% for country in countries %}
+                <a href="#" onclick="completeInput('{{country.name}}')"><b>{{country.name}}</b></a>
+                {% endfor %}
+            </div>
+                </div>
+                <button>Click me</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'main/js/cod.js'%}"></script>
+<script> filterFunction()</script>
+</html> 

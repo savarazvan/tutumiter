@@ -1,0 +1,241 @@
+.gradient-animation {
+    background: linear-gradient(322deg, #00b0ff, #8ef29a);
+    background-size: 800% 800%;
+    object-fit: none;
+    -webkit-animation: AnimationName 25s ease infinite;
+    -moz-animation: AnimationName 25s ease infinite;
+    animation: AnimationName 25s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
+
+@font-face {
+    font-family: foxCat;
+    src: url('../fonts/Fox\ &\ Cat.ttf');
+
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: right;
+}
+
+.item5 {
+    grid-area: footer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'menu main main main right right'
+        'menu footer footer footer footer footer';
+    grid-gap: 5px;
+    padding: 2px;
+}
+
+.grid-container>div {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 30px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {
+    outline: 3px solid #ddd;
+}
+
+.dropdown-content {
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.filterDiv {
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.country-name{
+    margin-top: 1px; 
+    font-family: foxCat;
+}
+
+.flag{
+    transition: transform .4s;
+}
+.flag:hover{   
+transform: scale(1.1);
+}
+
+div.scroll {
+    width: 600px;
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .parallax {
+    /* Set a specific height */
+    height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

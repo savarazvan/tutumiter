@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+
+<body style="margin:0%; padding:0%;">
+    <div>
+        <img class="parallax" src="{% static 'main/images/Romania.png' %}" width="100%"
+            style="z-index:1; margin: 0%; padding: 0%; margin:-10% 0; opacity: 75%;">
+        <div class="grid-container">
+            <div class="item1">
+                <h1 style="font-family: foxCat; z-index: 2; position: fixed; top: 20%;
+                left: 50%;transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.5);">Romania</h1>
+            </div>
+        </div>
+    </div>
+    <div style="position:fixed; max-height: 65%; Overflow-y:auto; Overflow-x:none; top:35%; left: 30%; right: 25%;">
+        <p style="border: 1px solid red; font-family: sans-serif; padding: 10px;">Pentru siguranta dumneavoastra va
+            recomandam sa va zdrobiti coaiele cu portiera de la dacia logan GPL</p>
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">Show all</button>
+            <button class="btn" onclick="filterSelection('beach')">Beach</button>
+            <button class="btn" onclick="filterSelection('mountain')">Mountain</button>
+            <button class="btn" onclick="filterSelection('canyon')">Canyon</button>
+            <button class="btn" onclick="filterSelection('forest')">Forest</button>
+            <button class="btn" onclick="filterSelection('waterfall')">Waterfall</button>
+            <button class="btn" onclick="filterSelection('cave')">Cave</button>
+            <button class="btn" onclick="filterSelection('strait')">Strait</button>
+            <button class="btn" onclick="filterSelection('desert')">Desert</button>
+        </div>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(2,400px); grid-row-gap: 20px;" >
+            <div style="text-align: center;">
+            <a href="google.com">
+                <img class="flag" src="{% static 'main/images/Romania.png' %}" width="350px" height="100px">
+                </a>
+                <p style="margin: 0 auto; font-family: foxCat; font-size: 20px"><b>plm</b></p>
+            </div>
+            <div style="height: 50px"></div
+        </div>
+    </div>
+
+</body>
+
+<script src="{% static 'main/js/cod.js' %}"></script>
+
+</html>

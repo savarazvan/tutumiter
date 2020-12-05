@@ -1,0 +1,6 @@
+Beautifulsoup4==4.9.1
+bs4==0.0.1
+Django==3.0.5
+requests==2.23.0
+Werkzeug==1.0.1
+
