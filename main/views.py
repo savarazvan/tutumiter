@@ -5,8 +5,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
 from .countries import countries
-from .models import Country
-
+from .models import Country, Atraction
 
 
 def country_list(request):
@@ -16,9 +15,11 @@ def get_started(request):
     return render(request, 'form.html', {'countries': Country.objects.all()})
 
 def country(request, country):
+    c = Country.objects.get(name=country)
     dictionary = {
-       'country': Country.objects.get(name=country),
-       'countries': Country.objects.all()
+       'country': c,
+       'countries': Country.objects.all(),
+       'attractions': Atraction.objects.filter(country=c)
     } 
     return render(request, 'country.html', dictionary)
 

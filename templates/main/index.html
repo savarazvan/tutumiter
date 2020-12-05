@@ -24,17 +24,24 @@
               </div>
         </div>
     </div>
-    <div class="grid-container" style="margin-left: 20%; margin-right: 20%; background-color: white;">
+    <div class="grid-container" style="margin-left: 20%; margin-right: 20%;">
         {% for country in countries %}
-            {% with 'filterDiv '|add:country.tags as filter%}
-            <div class = "{{ filter }}">
-            {% endwith %}
+             {% with 'filterDiv '|add:country.tags as filter%}
+            {% if country.quarantine == 'yes' %}
+            {%elif country.quarantine == 'partial'%}
+                <div class = "{{ filter }}" style="background-color: #FF9B58;">
+            {%elif country.quarantine == 'no'%}
+                <div class = "{{ filter }}" style="background-color: #68FF99;">
+            {%endif%}
+            {%if country.quarantine == 'no' or country.quarantine == 'partial'%}
                 <a href="{{country.name}}">
                     {% with 'main/images/'|add:country.name|add:'.png' as link %}
                 <img class="flag" src="{% static link %}" width="150px" height="100px"></a>
                     {% endwith %}
                 <p style="margin-top: 1px; font-family: foxCat;"><b>{{ country.name }}</b></p>
-            </div>
+                </div>
+            {%endif%}
+            {% endwith %}
         {% endfor %}
     </div> 
 </body>

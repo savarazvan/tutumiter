@@ -32,23 +32,25 @@
             <button class="btn" onclick="filterSelection('desert')">Desert</button>
         </div>
         <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(2,400px); grid-row-gap: 20px;" >
+        {% for attraction in attractions %}
             <div style="text-align: center;">
-            <a href="#" onclick="document.getElementById('myModal').style.display='block'">
-                <img class="flag" src="{% static 'main/images/Romania.png' %}" width="350px" height="100px">
+            {% with 'main/images/'|add:attraction.title|add:'.jpg' as link %}
+            <a href="#" onclick="document.getElementById('myModal').style.display='block'; updateModal('{{attraction.title}}', '{{attraction.text}}', '{% static link %}');">
+                <img class="flag" src="{% static link %}" width="350px" height="100px">
                 </a>
-                <p style="margin: 0 auto; font-family: foxCat; font-size: 20px"><b>plm</b></p>
+                <p style="margin: 0 auto; font-family: foxCat; font-size: 20px"><b>{{attraction.title}}</b></p>
+            {% endwith %}
             </div>
-            <div style="height: 50px"></div
+            {% endfor %}
+            <div style="height: 50px"></div>
         </div>
 
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
   <div class="modal-content" style="padding:0px">
-    <img src="{% static 'main/images/Romania.png' %}" width="100%" height="200px" style="margin-bottom:1px">
-    <h1 style="font-family: foxCat; padding:5px; margin-bottom:1px"><b>Atractie</b></h1>
-    <p style="font-family: sans-serif; padding:5px;"> Aceasta atractie este cea mai misto atractie jur pe copiii mei</p>
-    
+    <img id="attraction-image" width="100%" height="200px" style="margin-bottom:1px">
+    <h1 style="font-family: foxCat; padding:5px; margin-bottom:1px" id="attraction-title"><b>Atractie</b></h1>
+    <p style="font-family: sans-serif; padding:5px;" id="attraction-text"></p>
     <div class="scroll" >
                 <input type="text" placeholder="Select your country" style="text-align:center; width=100%; padding-left:0; padding-right:0;" id="myInput" onkeyup="filterFunction()">
                 <div id="myDropdown" class="dropdown-content">
