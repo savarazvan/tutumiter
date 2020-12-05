@@ -7,12 +7,14 @@
 
 <body style="margin:0%; padding:0%;">
     <div>
-        <img class="parallax" src="{% static 'main/images/Romania.png' %}" width="100%"
+    {% with 'main/images/'|add:country.name|add:'.png' as link %}
+        <img class="parallax" src="{% static link %}" width="100%"
             style="z-index:1; margin: 0%; padding: 0%; margin:-10% 0; opacity: 75%;">
+        {% endwith %}
         <div class="grid-container">
             <div class="item1">
                 <h1 style="font-family: foxCat; z-index: 2; position: fixed; top: 20%;
-                left: 50%;transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.5);">Romania</h1>
+                left: 50%;transform: translate(-50%, -50%); background-color: rgba(255,255,255,0.5);">{{country.name}}</h1>
             </div>
         </div>
     </div>
