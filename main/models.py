@@ -3,6 +3,7 @@ from django.db import models
 class Country(models.Model):
     name = models.CharField(max_length = 35)
     tags = models.CharField(max_length = 70, default = '')
+    advices = models.CharField(max_length = 500)
     open_for_f = models.CharField(max_length = 7)
     open_for_t = models.CharField(max_length = 7)
     quarantine = models.CharField(max_length = 7)
