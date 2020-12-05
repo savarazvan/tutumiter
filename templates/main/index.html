@@ -29,7 +29,7 @@
             {% with 'filterDiv '|add:country.tags as filter%}
             <div class = "{{ filter }}">
             {% endwith %}
-                <a href="google.com">
+                <a href="country?country='{{country.name}}'">
                     {% with 'main/images/'|add:country.name|add:'.png' as link %}
                 <img class="flag" src="{% static link %}" width="150px" height="100px"></a>
                     {% endwith %}
