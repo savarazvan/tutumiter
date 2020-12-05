@@ -16,7 +16,7 @@ def get_started(request):
     return render(request, 'form.html', {'countries': Country.objects.all()})
 
 def country(request):
-    return render(request, 'country.html')
+    return render(request, 'country.html', {'countries': Country.objects.all()})
 
 @login_required
 def create_db(request):
